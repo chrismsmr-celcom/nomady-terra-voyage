@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terra Voyage</title>
+  <meta name="description" content="Terra Voyage – Agence de voyage premium. Billets d’avion, visas, hôtels et voyages sur mesure.">
+  <meta name="keywords" content="agence de voyage, visa, billet d'avion, voyage sur mesure, Terra Voyage">
+  <meta name="author" content="Terra Voyage">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .modal { display: none; position: fixed; inset:0; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index:50; }
+    .modal-content { background: #111; padding: 1.5rem; border-radius: 1rem; max-width: 600px; width: 100%; }
+  </style>
+</head>
+<body class="bg-black text-white font-sans antialiased">
+
+<!-- NAVBAR -->
+<header class="fixed w-full z-50 bg-black/60 backdrop-blur-sm border-b border-red-700/30">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <img src="https://i.postimg.cc/j5VzVV3c/YABISO-VOYAGE-20251216-035622-0000-removebg-preview.png" class="h-12 w-auto object-contain"/>
+      <div>
+        <h1 class="text-lg font-bold tracking-wide">TERRA VOYAGE</h1>
+      </div>
+    </div>
+    <nav class="hidden md:flex items-center gap-8 text-sm">
+      <a href="#home" class="hover:text-red-500">Accueil</a>
+      <a href="#destinations" class="hover:text-red-500">Destinations</a>
+      <a href="#services" class="hover:text-red-500">Services</a>
+      <a href="#about" class="hover:text-red-500">À propos</a>
+      <a href="#contact" class="hover:text-red-500">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/243854442103?text=Bonjour%20Terra%20Voyage%2C%20je%20souhaite%20réserver%20un%20voyage." target="_blank" rel="noreferrer" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700">Réserver via WhatsApp</a>
+      <button id="menuBtn" class="md:hidden p-2 rounded-md focus:outline-none">☰</button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden px-6 pb-6">
+    <nav class="flex flex-col gap-3 text-base">
+      <a href="#home" onclick="toggleMenu()">Accueil</a>
+      <a href="#destinations" onclick="toggleMenu()">Destinations</a>
+      <a href="#services" onclick="toggleMenu()">Services</a>
+      <a href="#about" onclick="toggleMenu()">À propos</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+      <a href="https://wa.me/243854442103?text=Bonjour%20Terra%20Voyage%2C%20je%20souhaite%20réserver%20un%20voyage." target="_blank" rel="noreferrer" class="mt-2 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-600">Réserver via WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="pt-24 relative h-[80vh] md:h-[88vh] flex items-center">
+  <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80')] bg-cover bg-center opacity-30"></div>
+  <div class="relative max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-8 items-center">
+    <div class="flex-1">
+      <h2 class="text-4xl md:text-6xl font-bold leading-tight">Voyagez avec excellence</h2>
+      <p class="mt-4 text-gray-300 max-w-xl">
+        Terra Voyage conçoit des séjours sur-mesure, haut de gamme et adaptés à vos désirs. Pour réserver, discutez directement avec notre équipe sur WhatsApp et personnalisez chaque détail.
+      </p>
+      <div class="mt-6 flex gap-3">
+        <a href="https://wa.me/243854442103?text=Bonjour%20Terra%20Voyage%2C%20je%20souhaite%20réserver%20un%20voyage%20sur-mesure." target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-red-600 hover:bg-red-700">Réserver maintenant</a>
+        <a href="#destinations" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-700 hover:border-red-600">Voir les destinations</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section id="destinations" class="py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center text-red-600">Destinations populaires</h3>
+    <p class="text-center text-gray-300 mt-2">Des voyages créés pour ceux qui aiment le raffinement.</p>
+    <div class="mt-10 grid gap-8 grid-cols-1 md:grid-cols-3">
+
+      <!-- Dubaï -->
+      <div class="rounded-2xl overflow-hidden bg-white/5 shadow-lg">
+        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHViYWl8ZW58MHx8MHx8fDA%3D" alt="Dubaï" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h4 class="text-xl font-semibold">Dubaï</h4>
+          <p class="text-sm text-gray-300 mt-1">Luxe, shopping et désert</p>
+          <div class="mt-4 flex items-center justify-between text-sm text-gray-300">
+            <span>6 jours / 5 nuits</span>
+            <span class="font-semibold">À partir de 1 799 $</span>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <button onclick="openModal('dubaiModal')" class="flex-1 px-4 py-2 rounded-lg border border-gray-700 hover:border-red-600">En savoir plus</button>
+            <a href="https://wa.me/243854442103?text=Bonjour%20Terra%20Voyage%2C%20je%20veux%20personnaliser%20un%20voyage%20vers%20Dubaï." target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700">Réserver via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zanzibar -->
+      <div class="rounded-2xl overflow-hidden bg-white/5 shadow-lg">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80" alt="Zanzibar" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h4 class="text-xl font-semibold">Zanzibar</h4>
+          <p class="text-sm text-gray-300 mt-1">Plages, culture et détente</p>
+          <div class="mt-4 flex items-center justify-between text-sm text-gray-300">
+            <span>7 jours / 6 nuits</span>
+            <span class="font-semibold">À partir de 1 100 $</span>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <button onclick="openModal('zanzibarModal')" class="flex-1 px-4 py-2 rounded-lg border border-gray-700 hover:border-red-600">En savoir plus</button>
+            <a href="https://wa.me/243854442103?text=Bonjour%20Terra%20Voyage%2C%20je%20veux%20personnaliser%20un%20voyage%20vers%20Zanzibar." target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700">Réserver via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Istanbul -->
+      <div class="rounded-2xl overflow-hidden bg-white/5 shadow-lg">
+        <img src="https://media.istockphoto.com/id/1327842864/fr/photo/mosqu%C3%A9e-bleue-distanbul-c%C3%A9l%C3%A8bre-lieu-de-visite-turquie.webp?a=1&b=1&s=612x612&w=0&k=20&c=JPys2Zx-zueexlJ-keo8XtlUtnaU6v6DSfKJfZDBrRM=" alt="Istanbul" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h4 class="text-xl font-semibold">Istanbul</h4>
+          <p class="text-sm text-gray-300 mt-1">Histoire et gastronomie</p>
+          <div class="mt-4 flex items-center justify-between text-sm text-gray-300">
+            <span>5 jours / 4 nuits</span>
+            <span class="font-semibold">À partir de 1950 $</span>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <button onclick="openModal('istanbulModal')" class="flex-1 px-4 py-2 rounded-lg border border-gray-700 hover:border-red-600">En savoir plus</button>
+            <a href="https://wa.me/243854442103?text=Bonjour%20Terra%20Voyage%2C%20je%20veux%20personnaliser%20un%20voyage%20vers%20Istanbul." target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700">Réserver via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-20 bg-white/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center text-red-600">
+      Nos services
+    </h3>
+
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+      <div class="p-6 rounded-2xl bg-black/40 border border-gray-800">
+        <h4 class="font-semibold text-lg mb-2">Billets d’avion</h4>
+        <p class="text-sm text-gray-300">
+          Tarifs compétitifs et assistance complète.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-black/40 border border-gray-800">
+        <h4 class="font-semibold text-lg mb-2">Visas</h4>
+        <p class="text-sm text-gray-300">
+          Accompagnement visa touristique et business.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-black/40 border border-gray-800">
+        <h4 class="font-semibold text-lg mb-2">Hôtels</h4>
+        <p class="text-sm text-gray-300">
+          Sélection d’hôtels standards à luxe.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-black/40 border border-gray-800">
+        <h4 class="font-semibold text-lg mb-2">Voyages sur mesure</h4>
+        <p class="text-sm text-gray-300">
+          Des expériences adaptées à vos besoins.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h3 class="text-3xl font-bold">À propos de Terra Voyage</h3>
+      <p class="text-gray-300 mt-4">Terra Voyage est une agence spécialisée dans les expériences premium. Notre priorité : votre confort et des souvenirs inoubliables. Nous opérons avec transparence et une équipe locale dédiée pour chaque destination.</p>
+      <ul class="mt-6 text-gray-300 space-y-2 text-sm">
+        <li>• Équipe bilingue (FR / EN)</li>
+        <li>• Réservation via WhatsApp pour une personnalisation complète</li>
+        <li>• Partenaires hôteliers sélectionnés</li>
+      </ul>
+    </div>
+    <div class="rounded-2xl overflow-hidden bg-white/5 p-4">
+      <img src="https://i.postimg.cc/YSkZfVMS/YABISO-VOYAGE-20251216-035622-0000.png" alt="team" class="w-full h-64 object-cover rounded-lg">
+      <div class="mt-4 text-gray-300 text-sm">Nous croyons au voyage qui transforme — laissez-nous imaginer le vôtre.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-bold text-red-600">
+      Prêt à voyager ?
+    </h3>
+    <p class="text-gray-300 mt-4">
+      Contactez-nous et construisons ensemble votre prochain voyage.
+    </p>
+
+    <a href="https://wa.me/243854442103"
+       target="_blank"
+       class="inline-block mt-8 px-8 py-4 bg-red-600 hover:bg-red-700 rounded-xl text-lg font-semibold">
+      Discuter sur WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-red-700/10 py-6 mt-8 text-center text-gray-400 text-sm">
+  © 2025 Terra Voyage — Tous droits réservés • Conception premium
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/243854442103?text=Bonjour%20Terra%20Voyage%2C%20j'aimerais%20des%20informations." target="_blank" rel="noreferrer" class="fixed right-6 bottom-6 z-50 rounded-full shadow-xl">
+  <div class="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-green-400 text-black font-bold">WA</div>
+</a>
+
+<!-- MODALES DESTINATIONS -->
+<div id="dubaiModal" class="modal">
+  <div class="modal-content">
+    <div class="flex justify-between items-center mb-4">
+      <h4 class="text-xl font-bold text-red-500">Dubaï — Luxe & Shopping</h4>
+      <button onclick="closeModal('dubaiModal')" class="text-gray-400 hover:text-white">✕</button>
+    </div>
+    <p class="text-sm text-gray-300 mb-4">Luxe, shopping et désert.</p>
+    <ul class="text-sm text-gray-300 list-disc list-inside space-y-1 mb-4">
+   <li>Hôtel 4★</li>
+      <li>billet</li>
+      <li>Guides et visites incluses</li>
+      <li>Transferts privés</li>
+      <li>Assistance visa</li>
+      <li>assurance offerte</li>
+    </ul>
+    <a href="https://wa.me/243854442103?text=Bonjour%20Terra%20Voyage%2C%20envoyez-moi%20une%20proposition%20détaillée%20pour%20Dubaï." target="_blank" class="block text-center bg-red-600 hover:bg-red-700 py-3 rounded-lg">Demander un devis personnalisé</a>
+  </div>
+</div>
+
+<div id="zanzibarModal" class="modal">
+  <div class="modal-content">
+    <div class="flex justify-between items-center mb-4">
+      <h4 class="text-xl font-bold text-red-500">Zanzibar — Séjour détente & découverte</h4>
+      <button onclick="closeModal('zanzibarModal')" class="text-gray-400 hover:text-white">✕</button>
+    </div>
+    <p class="text-sm text-gray-300 mb-4">
+      Profitez des plages et de la culture swahilie.
+    </p>
+    <ul class="text-sm text-gray-300 list-disc list-inside space-y-1 mb-4">
+      <li>Hôtel 4★</li>
+      <li>billet</li>
+      <li>Guides et visites incluses</li>
+      <li>Transferts privés</li>
+      <li>Assistance visa</li>
+      <li>assurance offerte</li>
+    </ul>
+    <a href="https://wa.me/243854442103?text=Bonjour%20Terra%20Voyage%2C%20envoyez-moi%20une%20proposition%20détaillée%20pour%20Zanzibar." target="_blank" class="block text-center bg-red-600 hover:bg-red-700 py-3 rounded-lg">Demander un devis personnalisé</a>
+  </div>
+</div>
+
+<div id="istanbulModal" class="modal">
+  <div class="modal-content">
+    <div class="flex justify-between items-center mb-4">
+      <h4 class="text-xl font-bold text-red-500">Istanbul — Histoire & Gastronomie</h4>
+      <button onclick="closeModal('istanbulModal')" class="text-gray-400 hover:text-white">✕</button>
+    </div>
+    <p class="text-sm text-gray-300 mb-4">Découvrez la ville historique et ses spécialités culinaires.</p>
+    <ul class="text-sm text-gray-300 list-disc list-inside space-y-1 mb-4">
+      <li>Hôtel 4★</li>
+      <li>billet</li>
+      <li>Guides et visites incluses</li>
+      <li>Transferts privés</li>
+      <li>assurance offerte</li>
+    </ul>
+    <a href="https://wa.me/243854442103?text=Bonjour%20Terra%20Voyage%2C%20envoyez-moi%20une%20proposition%20détaillée%20pour%20Istanbul." target="_blank" class="block text-center bg-red-600 hover:bg-red-700 py-3 rounded-lg">Demander un devis personnalisé</a>
+  </div>
+</div>
+
+<script>
+  function openModal(id){document.getElementById(id).style.display='flex'}
+  function closeModal(id){document.getElementById(id).style.display='none'}
+  const menuBtn=document.getElementById('menuBtn')
+  const mobileMenu=document.getElementById('mobileMenu')
+  function toggleMenu(){mobileMenu.classList.toggle('hidden')}
+  menuBtn.addEventListener('click', toggleMenu)
+</script>
+
+</body>
+</html>
